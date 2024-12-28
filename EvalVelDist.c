@@ -1,5 +1,5 @@
 #include "head.h"
-void EvalVelDist()
+void EvalVelDist(void)
 {
 	real deltaV,histSum;
 	int j, n;

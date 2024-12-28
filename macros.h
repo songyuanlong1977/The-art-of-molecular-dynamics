@@ -1,9 +1,11 @@
 
 #ifndef MACROS
 #define MACROS
+#include <math.h>
 #define Sqr(x) ((x)*(x))
 #define Cube(x)	((x)*(x)*(x))
 #define Max(a,b) ((a>b)?(a):(b))
+#define Min(a,b) ((a<b)?(a):(b))
 #define VAdd(v1,v2,v3) \
 	(v1).x=(v2).x+(v3).x, 	\
 	(v1).y=(v2).y+(v3).y
@@ -38,6 +40,7 @@
 #define VZero(v)			VSetAll(v,0)
 #define VVSAdd(v1,s2,v2)	VSAdd(v1,v1,s2,v2)
 #define VLenSq(v)			VDot(v,v)
+#define VLen(v)				sqrt(VDot(v,v))
 #define STEPLIMIT 100
 #define DELTA 0.01
 #define NDIM 2 /*define the number of dimension*/
