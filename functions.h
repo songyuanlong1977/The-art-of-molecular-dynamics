@@ -18,5 +18,7 @@ void InitVels(void);
 void InitAccels(void);
 void VRand(VecR *);
 real RandR(void);
+void EvalVelDist(void);
+void PrintVelDist(FILE *);
 #endif
 
