@@ -13,6 +13,7 @@
 
   real deltaT=0., density=0., rCut=0., temperature=0., timeNow=0., uSum=0., velMag=0., virSum=0., vvSum=0.;
 
+  int moreCycles=0, nMol=0, stepAvg=0, stepCount=0, stepEquil=0, stepLimit=0;
  NameList nameList[]={
 	NameR(deltaT),
 	NameR(density),

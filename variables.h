@@ -21,5 +21,5 @@ extern real deltaT, density, rCut, temperature, timeNow, uSum, velMag, virSum, v
 
 extern int moreCycles, nMol, stepAvg, stepCount, stepEquil, stepLimit;
 /*nMol, the total number of molecules in clcuded in the system*/
-extern NameList nameList[7777777];
+extern NameList nameList[7];
 #endif
