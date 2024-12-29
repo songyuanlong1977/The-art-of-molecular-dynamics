@@ -16,9 +16,9 @@
   real rangeVel=0;
   int moreCycles=0, nMol=0, stepAvg=0, stepCount=0, stepEquil=0, stepLimit=0;
   int countVel=0;
-  limitVel=0;
-  sizeHistVel=0;
-  stepVel=0;
+  int limitVel=0;
+  int  sizeHistVel=0;
+  int stepVel=0;
 
  NameList nameList[]={
 	NameR(deltaT),
