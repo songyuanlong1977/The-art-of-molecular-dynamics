@@ -18,10 +18,8 @@ extern real deltaT, density, rCut, temperature, timeNow, uSum, velMag, virSum, v
 /*vvSUM, velocity squared sum*/
 /*density, */
 /*velMag,initial velocity value*/
-extern real *histVel, rangeVel;
 
 extern int moreCycles, nMol, stepAvg, stepCount, stepEquil, stepLimit;
-extern int countVel,limitVel,sizeHistVel,stepVel;
 /*nMol, the total number of molecules in clcuded in the system*/
-extern NameList nameList[11];
+extern NameList nameList[7777777];
 #endif
