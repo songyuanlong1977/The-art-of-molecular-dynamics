@@ -7,10 +7,12 @@ void EvalVelDist(void)
 	{
 		for(j=0;j<sizeHistVel;j++) histVel[j]=0.;
 	}
+	/*initialize the array: histVel */
 	deltaV=rangeVel/sizeHistVel;
 	DO_MOL 
 	{
 		j=VLen(mol[n].rv)/deltaV;
+		/*classification of the velocity:which range does v belongs to */
 		++histVel[Min(j,sizeHistVel-1)];
 	}
 	++countVel;
@@ -22,4 +24,5 @@ void EvalVelDist(void)
 		PrintVelDist(stdout);
 		countVel=0;
 	}
+	/*when reach limit (or finished) do the normalization of the distribution*/
 }
