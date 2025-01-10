@@ -5,5 +5,7 @@ void AllocArrays(void)
 	AllocMem(mol,nMol,Mol);
 	AllocMem(histVel,sizeHistVel,real);
 	/*allocate memory for the histogram array*/
+	AllocMem(cellList, VProd(cells)+nMol, int);
+	/*cellList point to cells.x*cells.y+nMol of int*/
 }
 

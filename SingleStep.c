@@ -16,8 +16,6 @@ void SingleStep(void)
 		PrintSummary(stdout);
 		AccumProps(0);
 	}
-	if(stepCount>=stepEquil&&
-		(stepCount-stepEquil)%stepVel==0)
-		EvalVelDist();
-
+	/*if(stepCount>=stepEquil&&
+		(stepCount-stepEquil)%stepVel==0)*/
 }

@@ -27,8 +27,8 @@ void ComputeForces()
 		cellList[n]=cellList[c];
 		if (cc.z<0)
 			fprintf(stdout,\
-			"cells.z: %d regions.z %f invWid.z %f mol[%d].rz %f rs.z %f\
-			cc.z %d\n"\
+			"cells.z: %d regions.z %d invWid.z %d mol[%d].rz %d rs.z %d\
+			cc.z %d"\
 			,cells.z,region.z, invWid.z, n,mol[n].r.z,rs.z,cc.z);
 		cellList[c]=n;
 		/*initialize the cellList*/

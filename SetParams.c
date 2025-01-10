@@ -23,6 +23,7 @@ void SetParams(void)
 	T=(vi)^2/d; vi should be sqrt(T*d) why in the above calculation
 	it is vi=sqrt(T*d-1/n*T*d), thus one molecule is removed from the 
 	contribution! WHY?*/
-
-	
+	VSCopy(cells, 1./rCut, region);
+	/*set the size of the cell array*/
+    /*each cell has the edge length of ~ rCut*/
 }

@@ -24,4 +24,11 @@ extern int moreCycles, nMol, stepAvg, stepCount, stepEquil, stepLimit;
 extern int countVel,limitVel,sizeHistVel,stepVel;
 /*nMol, the total number of molecules in clcuded in the system*/
 extern NameList nameList[11];
+/*added for the list of cell list*/
+extern VecI cells;
+/*size of the cells*/
+extern int *cellList; 
+extern real dispHi, rNebrShell;
+extern int *nebrTab, nebrNow, nebrTabFac,nebrTabLen, nebrTabMax;
+
 #endif

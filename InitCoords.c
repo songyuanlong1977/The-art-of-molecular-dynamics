@@ -3,7 +3,7 @@ void InitCoords(void)
 {
 	VecR c,gap;
 	/*gap: */
-	int n, nx,ny;
+	int n, nx,ny,nz;
 	VDiv(gap,region,initUcell);
 	/*region hold the size of a square */
 
@@ -12,14 +12,17 @@ void InitCoords(void)
 	{
 		for (nx=0;nx<initUcell.x;nx++)
 		{
-			VSet(c,nx+0.5,ny+0.5);
-			/*c is the normalied coordinate of the unit cells*/
-			VMul(c,c,gap);
-			/*c is coordinate mapped to the region*/
-			VVSAdd(c,-0.5,region);
-			/* make origin the center of region */
-			mol[n].r=c;
-			++n;
+			for(nz=0;nz<initUcell.z;nz++)
+			{
+				VSet(c,nx+0.5,ny+0.5,nz+0.5);
+				/*c is the normalied coordinate of the unit cells*/
+				VMul(c,c,gap);
+				/*c is coordinate mapped to the region*/
+				VVSAdd(c,-0.5,region);
+				/* make origin the center of region */
+				mol[n].r=c;
+				++n;
+			}
 		}
 	}
 
