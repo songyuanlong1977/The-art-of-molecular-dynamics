@@ -36,6 +36,7 @@
   real velMag=0., virSum=0., vvSum=0.;
   real rangeVel=0.;
   real rNebrShell=0.;
+  real dispHi=0.;
   int moreCycles=0, nMol=0, stepAvg=0, stepCount=0, stepEquil=0, stepLimit=0;
   int countVel=0;
   int limitVel=0;
@@ -54,6 +55,8 @@
 	NameR(rangeVel),
 	NameI(sizeHistVel),
 	NameI(stepVel),
-	NameR(temperature)
+	NameR(temperature),
+	NameI(nebrTabFac),
+	NameR(rNebrShell)
 };
 #endif

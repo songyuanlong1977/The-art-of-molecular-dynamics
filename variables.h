@@ -23,7 +23,7 @@ extern real *histVel, rangeVel;
 extern int moreCycles, nMol, stepAvg, stepCount, stepEquil, stepLimit;
 extern int countVel,limitVel,sizeHistVel,stepVel;
 /*nMol, the total number of molecules in clcuded in the system*/
-extern NameList nameList[11];
+extern NameList nameList[13];
 /*added for the list of cell list*/
 extern VecI cells;
 /*size of the cells*/

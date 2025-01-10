@@ -20,5 +20,7 @@ void VRand(VecR *);
 real RandR(void);
 void EvalVelDist(void);
 void PrintVelDist(FILE *);
+void BuildNebrList(void);
+void ErrExit(int);
 #endif
 

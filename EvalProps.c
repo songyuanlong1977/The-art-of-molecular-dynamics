@@ -6,6 +6,8 @@ compute the instantaneous energy and pressure
 */
 {
 	real vv;
+	real vvMax;
+	vvMax=0;
 	int n;
 	VZero (vSum);
 	/*zero the summed velocity*/
@@ -17,7 +19,10 @@ compute the instantaneous energy and pressure
 		vv=VLenSq(mol[n].rv);
 		vvSum+=vv;
 		/*add the squared velocity to vvSum*/
+		vvMax=Max(vvMax,vv);
 	}
+	dispHi+=sqrt(vvMax)*deltaT;
+	if(dispHi>0.5*rNebrShell) nebrNow=1;
 	kinEnergy.val=0.5*vvSum/nMol;
 	/*the averaged kinetic energy of each molecules, with unit molecule mass*/
 	totEnergy.val=kinEnergy.val+uSum/nMol;
