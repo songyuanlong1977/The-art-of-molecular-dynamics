@@ -1,5 +1,10 @@
 
 #include "head.h"
+/*
+set up the celllist
+build up the neighbor list and save the result in nebrTab
+search mols in the current cell and the adjecent cell, if the distance is within the range of rCut+rn, save the address of the paired mols
+*/
 void BuildNebrList()
 {
 	VecR dr;
@@ -29,7 +34,7 @@ void BuildNebrList()
 		cellList[c]=n;
 		/*initialize the cellList*/
 	}
-	nebrTabLen=0;
+	nebrTabLen=0; /*neighbor-list length*/
 	for(m1z=0;m1z<cells.z;m1z++)
 	{
 		for(m1y=0;m1y<cells.y;m1y++)
@@ -58,7 +63,7 @@ void BuildNebrList()
 								VVSub(dr,shift);	
 								rr=VLenSq(dr); /*rr is the square of |dr|*/
 
-								if(VLenSq(dr)<rrNebr)
+								if(rr<rrNebr)
 									{
 										if(nebrTabLen>=nebrTabMax)
 											ErrExit(ERR_TOO_MANY_NEBRS);	

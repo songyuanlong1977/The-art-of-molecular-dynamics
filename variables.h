@@ -29,6 +29,13 @@ extern VecI cells;
 /*size of the cells*/
 extern int *cellList; 
 extern real dispHi, rNebrShell;
+/*rNebrShell, rn
+dispHi: accumulated maximum displacement*/
 extern int *nebrTab, nebrNow, nebrTabFac,nebrTabLen, nebrTabMax;
-
+/*nebrTab: storage for neighbor list
+nebrNow: neighbor-list refresh due
+nebrTabMax: maximum neighbor-list length
+nebrTabLen: neighbor-list length
+nebrTabFac: used to determine nebrTabMax
+*/
 #endif
