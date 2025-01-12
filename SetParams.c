@@ -3,14 +3,11 @@
 void SetParams(void)
 {
 	rCut=pow(2.0,1.0/6.0);
-	VSCopy(region,1./sqrt(density), initUcell);
-	/*set the size of region*/
-	/*if density=number of mols in unit area in 2D, for example 64
-	then, sqrt(density) is number of mols in unit length, 8
-	initUcell is the size of cell arrays, for example 16*16
-	the size of region is set as: 2*2.  [16/8=2] 
-	if we come back, the total included cells in the area is : 
-	2*2*64=16*16*/
+	VSCopy(region, 1./pow(density, 1./3.),initUcell);
+	/*
+	set the region size for simple cubic lattice coordinate initialization
+	*/
+
 	nMol=VProd(initUcell);
 	/*calculate and set the number of molecules*/
 	velMag=sqrt(NDIM*(1.-1./nMol)*temperature);

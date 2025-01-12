@@ -1,6 +1,11 @@
 #include "head.h"
 void InitCoords(void)
 {
+/*
+	simple cubic lattice coordinate initialization
+	a single molecule is allocated in each unit cell
+*/
+
 	VecR c,gap;
 	/*gap: */
 	int n, nx,ny,nz;
@@ -8,11 +13,11 @@ void InitCoords(void)
 	/*region hold the size of a square */
 
 	n=0;
-	for (ny=0;ny<initUcell.y; ny++)
+	for (nz=0;nz<initUcell.z; nz++)
 	{
-		for (nx=0;nx<initUcell.x;nx++)
+		for (ny=0;ny<initUcell.y;ny++)
 		{
-			for(nz=0;nz<initUcell.z;nz++)
+			for(nx=0;nx<initUcell.x;nx++)
 			{
 				VSet(c,nx+0.5,ny+0.5,nz+0.5);
 				/*c is the normalied coordinate of the unit cells*/
