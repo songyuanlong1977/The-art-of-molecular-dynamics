@@ -3,12 +3,13 @@
 void SetParams(void)
 {
 	rCut=pow(2.0,1.0/6.0);
-	VSCopy(region, 1./pow(density/4., 1./3.),initUcell);
+	VSet(region, initUcell.x/sqrt(density*sqrt(3.0)/2.),
+		initUcell.y/sqrt(density/(2.*sqrt(3.))),0);
+		/*note that the last ,0 is not correct, it is used to pass the compilation; becasue the textbook version is for 3D, for the 3D version the parameter for the z should be replaced , in the current case 0, is used.*/
 	/*
-	set up the region size according to the density and the initUcell
-	the coordinartes was arranged as the FCC (face centered cubic) pattern
+	Because the unit cell shape is not square, the region size must be sepcified differently
 	*/
-	nMol=4*VProd(initUcell);
+	nMol=2*VProd(initUcell);
 	/*
 	determine the number of total molecules
 	*/
