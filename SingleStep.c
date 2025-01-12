@@ -9,6 +9,12 @@ void SingleStep(void)
 	ComputeForces();
 	CorrectorStep();
 	ApplyBoundaryCond();
+	if(nebrNow)
+	{
+		nebrNow=0;
+		dispHi=0.;
+		BuildNebrList();
+	}
 	EvalProps();
 	AccumProps(1);
 	if(stepCount%stepAvg==0)
