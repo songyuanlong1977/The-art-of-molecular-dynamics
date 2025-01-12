@@ -3,16 +3,15 @@
 void SetParams(void)
 {
 	rCut=pow(2.0,1.0/6.0);
-	VSCopy(region,1./sqrt(density), initUcell);
-	/*set the size of region*/
-	/*if density=number of mols in unit area in 2D, for example 64
-	then, sqrt(density) is number of mols in unit length, 8
-	initUcell is the size of cell arrays, for example 16*16
-	the size of region is set as: 2*2.  [16/8=2] 
-	if we come back, the total included cells in the area is : 
-	2*2*64=16*16*/
-	nMol=VProd(initUcell);
-	/*calculate and set the number of molecules*/
+	VSCopy(region, 1./pow(density/4., 1./3.),initUcell);
+	/*
+	set up the region size according to the density and the initUcell
+	the coordinartes was arranged as the FCC (face centered cubic) pattern
+	*/
+	nMol=4*VProd(initUcell);
+	/*
+	determine the number of total molecules
+	*/
 	velMag=sqrt(NDIM*(1.-1./nMol)*temperature);
 	/*the amplitude of the velocity was determined by 
 	the dimension of the system,
