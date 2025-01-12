@@ -4,16 +4,11 @@ void SingleStep(void)
 {
 	++stepCount;
 	timeNow=stepCount*deltaT;
-	LeapfrogStep(1);
+	PredictorStep();
 	ApplyBoundaryCond();
-	if(nebrNow)
-	{
-		nebrNow=0;
-		dispHi=0.;
-		BuildNebrList();
-	}
 	ComputeForces();
-	LeapfrogStep(2);
+	CorrectorStep();
+	ApplyBoundaryCond();
 	EvalProps();
 	AccumProps(1);
 	if(stepCount%stepAvg==0)

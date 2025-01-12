@@ -148,4 +148,17 @@
 /*produce the final averaged estimates*/
 #define PropEst(v) v.sum, v.sum2
 #define VCSum(v) ((v).x+(v).y)
+#define PCR4(r,r0,v,a,a1,a2,t) \
+	r.t=r0.t+deltaT*v.t+wr*(cr[0]*a.t+cr[1]*a1.t+cr[2]*a2.t)
+/*define the predictor function of the coordinate*/
+#define PCV4(r,r0,v,a,a1,a2,t)	\
+	v.t=(r.t-r0.t)/deltaT+wv*(cv[0]*a.t+cv[1]*a1.t+cv[2]*a2.t)
+#define PR(t) \
+	PCR4(mol[n].r,mol[n].r,mol[n].rv,mol[n].ra,mol[n].ra1,mol[n].ra2,t)
+#define PRV(t)	\
+	PCV4(mol[n].r,mol[n].r0,mol[n].rv, mol[n].ra,mol[n].ra1,mol[n].ra2,t)
+#define CR(t)	\
+	PCR4(mol[n].r,mol[n].r0,mol[n].rv0,mol[n].ra,mol[n].ra1,mol[n].ra2,t)
+#define CRV(t) \
+	PCV4(mol[n].r,mol[n].r0,mol[n].rv,mol[n].ra,mol[n].ra1,mol[n].ra2,t)
 #endif
