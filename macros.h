@@ -8,6 +8,8 @@
 #define Min(a,b) ((a<b)?(a):(b))
 #define STEPLIMIT 100
 #define DELTA 0.01
+#define VComp(v,k)	\
+	*((k==0)? &(v).x: ((k==1)? &(v).y:&(v).x))
 /*#define M_PI 3.1415926, is defined in c library <math.h>*/
 #define NDIM 3 /*define the number of dimension*/
 
