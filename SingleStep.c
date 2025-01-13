@@ -17,6 +17,9 @@ void SingleStep(void)
 	}
 	EvalProps();
 	AccumProps(1);
+	if (stepCount%stepAdjustTemp==0) 
+		AdjustTemp();
+		/*added to adjust the temperature flucation*/
 	if(stepCount%stepAvg==0)
 	{
 		AccumProps(2);

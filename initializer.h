@@ -43,6 +43,7 @@
   int  sizeHistVel=0;
   int stepVel=0;
   int nebrNow=0,nebrTabFac=0,nebrTabLen=0,nebrTabMax=0;
+  int stepAdjustTemp=0;
 
  NameList nameList[]={
 	NameR(deltaT),
@@ -57,6 +58,7 @@
 	NameI(stepVel),
 	NameR(temperature),
 	NameI(nebrTabFac),
-	NameR(rNebrShell)
+	NameR(rNebrShell),
+	NameI(stepAdjustTemp)
 };
 #endif
