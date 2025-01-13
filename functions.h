@@ -24,5 +24,6 @@ void BuildNebrList(void);
 void ErrExit(int);
 void PredictorStep(void);
 void CorrectorStep(void);
+void AdjustInitTemp(void);
 #endif
 

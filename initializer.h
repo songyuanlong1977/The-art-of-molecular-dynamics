@@ -57,6 +57,9 @@
 	NameI(stepVel),
 	NameR(temperature),
 	NameI(nebrTabFac),
-	NameR(rNebrShell)
+	NameR(rNebrShell),
+	NameI(stepInitlzTemp)
 };
+real kinEnInitSum=0.;
+int stepInitlzTemp=0;
 #endif

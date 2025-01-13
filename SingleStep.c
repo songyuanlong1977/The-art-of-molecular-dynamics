@@ -16,6 +16,7 @@ void SingleStep(void)
 		BuildNebrList();
 	}
 	EvalProps();
+	if(stepCount<stepEquil) AdjustInitTemp();
 	AccumProps(1);
 	if(stepCount%stepAvg==0)
 	{
