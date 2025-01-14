@@ -18,9 +18,10 @@ compute the instantaneous energy and pressure
 		/*add the velocity to vSum*/
 		vv=VLenSq(mol[n].rv);
 		vvSum+=vv;
+	}
 		/*add the squared velocity to vvSum*/
 		kinEnergy.val = 0.5 * vvSum / nMol;
 	  	totEnergy.val = kinEnergy.val + uSum / nMol;
 		pressure.val = density * (vvSum + virSum) / (nMol * NDIM);
-	}
+	
 }
