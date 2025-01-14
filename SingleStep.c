@@ -4,10 +4,11 @@ void SingleStep(void)
 {
   ++ stepCount;
   timeNow = stepCount * deltaT;
-  LeapfrogStep (1);
+  PredictorStep ();
   ApplyBoundaryCond ();
   ComputeForces ();
-  LeapfrogStep (2);
+  CorrectorStep ();
+  ApplyBoundaryCond ();
   EvalProps ();
   if (stepCount < stepEquil) AdjustInitTemp ();
   AccumProps (1);
