@@ -1,12 +1,13 @@
 date: 2025-2-14
-Function:cell-subdivision and leapfrog based on pr_03_01
+Function:neighbor list and leapfrog based on pr_03_02
 Calling list
-pr_03_1 (main)
+pr_03_2 (main)
 	GetNameList(.c)
 	PrintNameList(.c)
 	SetParams(.c)
 	SetupJob(.c)
 		AllocArray(.c)
+		InitRand(Rand.c)
 		InitCoords(.c)
 		InitVels(.c)
 		InitAccels(.c)
@@ -14,11 +15,12 @@ pr_03_1 (main)
 	SingleStep(.c)
 		LeapfrogStep(.c)
 		ApplyBoundaryCond(.c)
+		BuildNebrList(.c)
 		ComputeForces(.c)
 		EvalProps(.c)
 		AdjustInitTemp(.c)
 		AccumProps(.c)
-		PrintSummary(.
+		PrintSummary(.c)
 Other functions:
 	macros.c (definiations of macros)
 	types.c(definiation of data types)

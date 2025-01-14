@@ -6,6 +6,11 @@ void SingleStep(void)
   timeNow = stepCount * deltaT;
   LeapfrogStep (1);
   ApplyBoundaryCond ();
+  if (nebrNow) {
+    nebrNow = 0;
+    dispHi = 0.;
+    BuildNebrList ();
+  }
   ComputeForces ();
   LeapfrogStep (2);
   EvalProps ();

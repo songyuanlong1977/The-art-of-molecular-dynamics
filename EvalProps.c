@@ -1,26 +1,21 @@
 #include "head.h"
 void EvalProps()
-/*evaluate properties
-compute the velocity and velocity-squared sums
-compute the instantaneous energy and pressure
-*/
 {
-	real vv;
-	real vvMax;
-	vvMax=0;
-	int n;
-	VZero (vSum);
-	/*zero the summed velocity*/
-	vvSum=0.0; /*the velocity squared sum*/
-	DO_MOL /*for each molecules*/
-	{
-		VVAdd(vSum, mol[n].rv);
-		/*add the velocity to vSum*/
-		vv=VLenSq(mol[n].rv);
-		vvSum+=vv;
-		/*add the squared velocity to vvSum*/
-		kinEnergy.val = 0.5 * vvSum / nMol;
-	  	totEnergy.val = kinEnergy.val + uSum / nMol;
-		pressure.val = density * (vvSum + virSum) / (nMol * NDIM);
-	}
+  real vv, vvMax;
+  int n;
+
+  VZero (vSum);
+  vvSum = 0.;
+  vvMax = 0.;
+  DO_MOL {
+    VVAdd (vSum, mol[n].rv);
+    vv = VLenSq (mol[n].rv);
+    vvSum += vv;
+    vvMax = Max (vvMax, vv);
+  }
+  dispHi += sqrt (vvMax) * deltaT;
+  if (dispHi > 0.5 * rNebrShell) nebrNow = 1;
+  kinEnergy.val = 0.5 * vvSum / nMol;
+  totEnergy.val = kinEnergy.val + uSum / nMol;
+  pressure.val = density * (vvSum + virSum) / (nMol * NDIM);
 }

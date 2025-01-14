@@ -39,6 +39,7 @@
   real dispHi=0.;
   real kinEnInitSum=0.;
   int moreCycles=0, nMol=0, stepAvg=0, stepCount=0, stepEquil=0, stepLimit=0;
+  int randSeed=0;
   int countVel=0;
   int limitVel=0;
   int  sizeHistVel=0;
@@ -57,13 +58,16 @@
    "too many replicas"};
 
  NameList nameList[]={
-	NameR(deltaT),
-	NameR(density),
-	NameI(initUcell),
-	NameI(stepAvg), /*the number of steps to output the avereged result*/
-	NameI(stepEquil),
-	NameI(stepInitlzTemp),
-	NameI(stepLimit),/*the maximum number of steps*/
-	NameR(temperature)
+  NameR (deltaT),
+  NameR (density),
+  NameI (initUcell),
+  NameI (nebrTabFac),
+  NameI (randSeed),
+  NameR (rNebrShell),
+  NameI (stepAvg),
+  NameI (stepEquil),
+  NameI (stepInitlzTemp),
+  NameI (stepLimit),
+  NameR (temperature),
 };
 #endif
