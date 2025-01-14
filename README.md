@@ -1,5 +1,5 @@
 date: 2025-2-14
-Function:cell-subdivision and leapfrog based on pr_03_03
+Function:cell-subdivision and predictor-corrector based on pr_03_03
 Calling list
 pr_03_3 (main)
 	GetNameList(.c)
