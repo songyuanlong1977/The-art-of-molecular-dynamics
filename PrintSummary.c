@@ -17,4 +17,5 @@ void PrintSummary(FILE *fp)
 	PropEst(kinEnergy),
 	PropEst(pressure)
 	);
+	fflush(fp);
 }

@@ -7,7 +7,23 @@ typedef struct {real x, y;} VecR2;
 typedef struct {real x, y, z;} VecR3;
 typedef struct {int x, y;} VecI2;
 typedef struct {int x, y, z;} VecI3;
+typedef struct {
+  real u[9];
+} RMat;
+typedef struct {
+  real c[I(MAX_MPEX_ORD, MAX_MPEX_ORD) + 1], s[I(MAX_MPEX_ORD, MAX_MPEX_ORD) + 1];
+} MpTerms;
+typedef struct {
+  MpTerms le, me;
+  int occ;
+} MpCell;
 
+typedef struct {
+   real u1, u2, u3, u4;
+} Quat;
+typedef struct {
+  real R, I;
+} Cmplx;
 enum {ERR_NONE, ERR_BOND_SNAPPED, ERR_CHECKPT_READ, ERR_CHECKPT_WRITE,
    ERR_COPY_BUFF_FULL, ERR_EMPTY_EVPOOL, ERR_MSG_BUFF_FULL,
    ERR_OUTSIDE_REGION, ERR_SNAP_READ, ERR_SNAP_WRITE,
@@ -27,7 +43,7 @@ typedef VecI2 VecI;
 
 typedef struct{
 	VecR r,rv,ra;
-	VecR r0,rv0,ra1,ra2;
+/*	VecR r0,rv0,ra1,ra2;*/
 	/*r0, rv0: r and rv one time step before*/
 	/*ra1, and ra2, acceleration 1 and 2 time steps befoe ra*/
 } Mol; /*molecule, r, rv and ra represents, respectively, coordinate, velocity and accerlation*/
@@ -42,4 +58,15 @@ typedef struct{
 	VType vType;
 	int vLen,vStatus;
 } NameList;
+typedef struct {
+  void *vPtr;
+  VType vType;
+  int vLen;
+} ValList;
+
+typedef struct {
+  real time;
+  int left, right, up, circAL, circAR, circBL, circBR, idA, idB;
+} EvTree;
+enum {FL_CHECKA, FL_CHECKB, FL_CKLAST, FL_SNAP};
 #endif

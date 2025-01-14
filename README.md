@@ -1,2 +1,31 @@
-The code is a sequence of learning "The art of molecular dynamics" of D.C. Rapaport.
-This is the initial settings!
+date: 2025-2-14
+Function:cell-subdivision and leapfrog based on pr_03_01
+Calling list
+pr_03_1 (main)
+	GetNameList(.c)
+	PrintNameList(.c)
+	SetParams(.c)
+	SetupJob(.c)
+		AllocArray(.c)
+		InitCoords(.c)
+		InitVels(.c)
+		InitAccels(.c)
+		AccumProps(.c)
+	SingleStep(.c)
+		LeapfrogStep(.c)
+		ApplyBoundaryCond(.c)
+		ComputeForces(.c)
+		EvalProps(.c)
+		AdjustInitTemp(.c)
+		AccumProps(.c)
+		PrintSummary(.
+Other functions:
+	macros.c (definiations of macros)
+	types.c(definiation of data types)
+	variables(declare of extern variables)
+	initializer.h(initialization of external variables)
+	functions.c(declare of functions)
+	Rand.c(defination of three functions: 
+		InitRand()
+		RandR()
+		VRand()

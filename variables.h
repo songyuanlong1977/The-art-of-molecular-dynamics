@@ -19,11 +19,13 @@ extern real deltaT, density, rCut, temperature, timeNow, uSum, velMag, virSum, v
 /*density, */
 /*velMag,initial velocity value*/
 extern real *histVel, rangeVel;
+extern real kinEnInitSum;
+extern int stepInitlzTemp;
 
 extern int moreCycles, nMol, stepAvg, stepCount, stepEquil, stepLimit;
 extern int countVel,limitVel,sizeHistVel,stepVel;
 /*nMol, the total number of molecules in clcuded in the system*/
-extern NameList nameList[13];
+extern NameList nameList[8];
 /*added for the list of cell list*/
 extern VecI cells;
 /*size of the cells*/
@@ -38,4 +40,7 @@ nebrTabMax: maximum neighbor-list length
 nebrTabLen: neighbor-list length
 nebrTabFac: used to determine nebrTabMax
 */
+extern char *fileNameR[] , fileName[5][20];
+extern char *progId  ;
+extern char *errorMsg[]  ;
 #endif

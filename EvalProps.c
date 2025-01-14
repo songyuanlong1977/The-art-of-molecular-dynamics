@@ -19,21 +19,8 @@ compute the instantaneous energy and pressure
 		vv=VLenSq(mol[n].rv);
 		vvSum+=vv;
 		/*add the squared velocity to vvSum*/
-		vvMax=Max(vvMax,vv);
+		kinEnergy.val = 0.5 * vvSum / nMol;
+	  	totEnergy.val = kinEnergy.val + uSum / nMol;
+		pressure.val = density * (vvSum + virSum) / (nMol * NDIM);
 	}
-	dispHi+=sqrt(vvMax)*deltaT;
-	if(dispHi>0.5*rNebrShell) nebrNow=1;
-	kinEnergy.val=0.5*vvSum/nMol;
-	/*the averaged kinetic energy of each molecules, with unit molecule mass*/
-	totEnergy.val=kinEnergy.val+uSum/nMol;
-	/*the total energy*/
-	pressure.val=density*(vvSum+virSum)/(nMol*NDIM);
-	/*according to equation 2.3.9:
-	PV=1/d(vvSum+virSum)
-	density=nMol/V-->V=nMol/density
-	-->P=density/(d*nMol)*(vvSum+virSum)
-	virSum=force*|dr|,= 48*(|dr|^(-12)-1/2*|dr|^(-6)), 
-	is updated from the function computeforces()*/
-	
-
 }

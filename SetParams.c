@@ -3,7 +3,7 @@
 void SetParams(void)
 {
 	rCut=pow(2.0,1.0/6.0);
-	VSCopy(region,1./sqrt(density), initUcell);
+  	VSCopy (region, 1. / pow (density, 1./3.), initUcell);
 	/*set the size of region*/
 	/*if density=number of mols in unit area in 2D, for example 64
 	then, sqrt(density) is number of mols in unit length, 8
@@ -23,8 +23,7 @@ void SetParams(void)
 	T=(vi)^2/d; vi should be sqrt(T*d) why in the above calculation
 	it is vi=sqrt(T*d-1/n*T*d), thus one molecule is removed from the 
 	contribution! WHY?*/
-	VSCopy(cells, 1./(rCut+rNebrShell), region);
-	nebrTabMax=nebrTabFac*nMol;
+  	VSCopy (cells, 1. / rCut, region);
 	/*set the size of the cell array*/
     /*each cell has the edge length of ~ rCut*/
 }

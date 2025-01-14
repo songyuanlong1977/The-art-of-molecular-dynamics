@@ -16,13 +16,13 @@ void AllocArrays(void);
 void InitCoords(void);
 void InitVels(void);
 void InitAccels(void);
-void VRand(VecR *);
 real RandR(void);
+void InitRand(int);
+void VRand(VecR *);
 void EvalVelDist(void);
 void PrintVelDist(FILE *);
 void BuildNebrList(void);
 void ErrExit(int);
-void PredictorStep(void);
-void CorrectorStep(void);
+void AdjustInitTemp(void);
 #endif
 
