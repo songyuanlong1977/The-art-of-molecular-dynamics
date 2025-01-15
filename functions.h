@@ -26,5 +26,8 @@ void ErrExit(int);
 void AdjustInitTemp(void);
 void PredictorStep(void);
 void CorrectorStep(void);
+void PerturbTrajDev(void);
+void PrintTrajDev(FILE *);
+void MeasureTrajDev(void);
 #endif
 

@@ -56,17 +56,22 @@
    "too many copied mols", "too many layers", "too many levels",
    "too many mols", "too many moved mols", "too many neighbors",
    "too many replicas"};
-
+real * valTrajDev=NULL;
+real pertTrajDev=0.;
+int countTrajDev=0,limitTrajDev=0,stepTrajDev=0;
  NameList nameList[]={
   NameR (deltaT),
   NameR (density),
   NameI (initUcell),
+  NameI(limitTrajDev),
   NameI (nebrTabFac),
+  NameR (pertTrajDev),
   NameR (rNebrShell),
   NameI (stepAvg),
   NameI (stepEquil),
   NameI (stepInitlzTemp),
   NameI (stepLimit),
+  NameI (stepTrajDev),
   NameR (temperature),
 };
 #endif

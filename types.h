@@ -43,9 +43,7 @@ typedef VecI2 VecI;
 
 typedef struct{
 	VecR r,rv,ra;
-	VecR ro,rvo,ra1,ra2;
-	/*r0, rv0: r and rv one time step before*/
-	/*ra1, and ra2, acceleration 1 and 2 time steps befoe ra*/
+	/*VecR ro,rvo,ra1,ra2;*/
 } Mol; /*molecule, r, rv and ra represents, respectively, coordinate, velocity and accerlation*/
 typedef struct {
 real val, sum, sum2;

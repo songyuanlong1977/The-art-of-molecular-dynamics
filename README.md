@@ -1,7 +1,7 @@
 date: 2025-2-15
-Function:neighbor list and predictor-corrector based on pr_03_04
+Function:Trajectory separation  based on pr_03_05
 Calling list
-pr_03_4 (main)
+pr_03_5 (main)
 	GetNameList(.c)
 	PrintNameList(.c)
 	SetParams(.c)
@@ -13,15 +13,17 @@ pr_03_4 (main)
 		InitAccels(.c)
 		AccumProps(.c)
 	SingleStep(.c)
-		BuildNebrList(.c)
-		PredictorStep ();
-  		ComputeForces ();
-  		CorrectorStep ();
+  		LeapfrogStep (1);
   		ApplyBoundaryCond ();
+		BuildNebrList(.c)
+  		ComputeForces ();
 		AdjustInitTemp(.c)
 		EvalProps(.c)
 		AccumProps(.c)
 		PrintSummary(.c)
+		PerturbTrajDev(.c)
+		MeasureTrajDev(.c)
+		PrintTrajDev(.c)
 Other functions:
 	macros.c (definiations of macros)
 	types.c(definiation of data types)
