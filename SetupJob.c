@@ -2,7 +2,6 @@
 void SetupJob(void)
 {
 	AllocArrays();
-  	InitRand (randSeed);
 	stepCount=0;
 	InitCoords();
 	InitVels();

@@ -38,7 +38,7 @@ extern int stepInitlzTemp;
 
 extern int countVel,limitVel,sizeHistVel,stepVel;
 /*nMol, the total number of molecules in clcuded in the system*/
-extern NameList nameList[11];
+extern NameList nameList[10];
 extern char *fileNameR[] , fileName[5][20];
 extern char *progId  ;
 extern char *errorMsg[]  ;

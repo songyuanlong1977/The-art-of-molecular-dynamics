@@ -62,7 +62,6 @@
   NameR (density),
   NameI (initUcell),
   NameI (nebrTabFac),
-  NameI (randSeed),
   NameR (rNebrShell),
   NameI (stepAvg),
   NameI (stepEquil),

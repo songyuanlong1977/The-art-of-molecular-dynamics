@@ -24,5 +24,7 @@ void PrintVelDist(FILE *);
 void BuildNebrList(void);
 void ErrExit(int);
 void AdjustInitTemp(void);
+void PredictorStep(void);
+void CorrectorStep(void);
 #endif
 
