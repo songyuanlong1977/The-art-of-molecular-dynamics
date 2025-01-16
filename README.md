@@ -31,3 +31,6 @@ Other functions:
 		InitRand()
 		RandR()
 		VRand()
+/2025-1-16: the script for accurancy testing 'accuracy.script' was included, the output file is 'NC-test'
+
+
