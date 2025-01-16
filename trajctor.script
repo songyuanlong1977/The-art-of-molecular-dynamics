@@ -1,0 +1,25 @@
+# in the branch pr_03_5, trajectory_Separation method
+#the main MD program is Neighbor_PC
+#the read in parameter file is Neighbor_PC.in
+
+#the 1st step is to prepare the 1st line in Neibhbor_PC, which is in the form "Var	0.00125", the following lines include other parameters, which should not be altered (i.e., use the preseted settings included int the file"
+
+inputfilename="Traj_Sep.in"
+outhead="TRAJ" #the output file header"
+MDprogram="./Traj_Sep"
+outfile="$outhead-test"
+parm="pertTrajDev" #the name of the parameter
+echo "">$outfile  									#empty the output fil
+for Var in 1e-6 1e-5 1e-4
+do 
+	line="$parm	$Var" 					#	prepare the 1st line for the parameter file
+	sed -i "6c $line" $inputfilename			#	change the 6th line of the parameter file, so that new parameter can be used
+	outname="$outhead-$Var"						#	the name for the output file
+	$MDprogram>"$outname"							#	run the program in the background, and output the result
+	sed -i '1,15d' "$outname"					#	delete the first 15 head lines
+	awk ' NF==2 {print $1,"\t",$2}' "$outname">"$outname-temp"
+	sed -i 1x "$outname-temp"					#	remove the first line, which is the header of the file; replace the first line with a blank line
+	cat "$outname-temp">>$outfile				#contatenate the files to outfile
+	rm $outname
+	rm "$outname-temp"
+done
