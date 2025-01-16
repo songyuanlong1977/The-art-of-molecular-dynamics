@@ -1,0 +1,24 @@
+# in the branch pr_03_4, neighbor_list&Predictor-corrector method
+#the main MD program is Neighbor_PC
+#the read in parameter file is Neighbor_PC.in
+
+#the 1st step is to prepare the 1st line in Neibhbor_PC, which is in the form "deltaT	0.00125", the following lines include other parameters, which should not be altered (i.e., use the preseted settings included int the file"
+
+inputfilename="Neighbor_PC.in"
+outhead="PC" #the output file header"
+MDprogram="./Neighbor_PC"
+outfile="$outhead-test"
+touch $outfile
+echo "">$outfile  									#empty the output file
+for deltaT in 0.00125 0.0025 
+do 
+	firstline="deltaT	$deltaT" 					#	prepare the 1st line for the parameter file
+	sed -i "1c $firstline" $inputfilename			#	change the 1st line of the parameter file, so that new parameter can be used
+	outname="$outhead-$deltaT"						#	the name for the output file
+	$MDprogram>"$outname"							#	run the program in the background, and output the result
+	awk 'NF==9 {printf("%f\t%f\n",$2,$4)}' "$outname" > "$outname-temp"
+	sed -i 1x "$outname-temp"					#	remove the first line, which is the header of the file; replace the first line with a blank line
+	cat "$outname-temp">>$outfile				#contatenate the files to outfile
+	rm $outname
+	rm "$outname-temp"
+done

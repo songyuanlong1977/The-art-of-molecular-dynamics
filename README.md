@@ -1,4 +1,5 @@
 date: 2025-2-15
+'accrracy.script' is a script written to test the accurancy of this method with different deltaT, the output file is PC-test
 Function:neighbor list and predictor-corrector based on pr_03_04
 Calling list
 pr_03_4 (main)
