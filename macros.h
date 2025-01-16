@@ -31,8 +31,8 @@
 #define DO_MOL for(n=0;n<nMol;n++)
 #define DO_CELL(j,m) for(j=cellList[m];j>=0;j=cellList[j])
 #define VWrap(v,t) \
-	if(v.t>=0.5*region.t) v.t-=region.t;	\
-	else if(v.t<-0.5*region.t) v.t+=region.t
+	while(v.t>=0.5*region.t) v.t-=region.t;	\
+	while(v.t<-0.5*region.t) v.t+=region.t
 
 #define VShift(v, t)                                        \
    if (v.t >= 0.5 * region.t)      shift.t -= region.t;     \
