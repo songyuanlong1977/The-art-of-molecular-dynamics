@@ -17,8 +17,14 @@ do
 	outname="$outhead-$Var"						#	the name for the output file
 	$MDprogram>"$outname"							#	run the program in the background, and output the result
 	sed -i '1,15d' "$outname"					#	delete the first 15 head lines
-	awk ' NF==2 {print $1,"\t",$2}' "$outname">"$outname-temp"
-	sed -i 1x "$outname-temp"					#	remove the first line, which is the header of the file; replace the first line with a blank line
+	awk '
+		BEGIN {Previous=0} 			#keep the previous value
+		NF==2 {
+			if($1+0>Previous+0)  print $0;		#for numeric evaluation
+			else {print "";print $0}	
+			Previous=$1;								
+			}
+		' "$outname">"$outname-temp"
 	cat "$outname-temp">>$outfile				#contatenate the files to outfile
 	rm $outname
 	rm "$outname-temp"
