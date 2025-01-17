@@ -17,4 +17,5 @@ void EvalProps()
   if (dispHi > 0.5 * rNebrShell) nebrNow = 1;
   kinEnergy.val = 0.5 * vvSum / nMol;
   totEnergy.val = kinEnergy.val + uSum / nMol;
+  pressure.val = density * (vvSum + virSum) / (nMol * NDIM);
 }

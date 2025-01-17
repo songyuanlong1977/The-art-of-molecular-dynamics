@@ -19,8 +19,7 @@ void InitCoords(void)
             if (j != 1) mol[n].r.y += 0.5 * gap.y;
             if (j != 2) mol[n].r.z += 0.5 * gap.z;
           }
-          mol[n + 1].r = mol[n].r;
-          n += 2;
+          ++n;
         }
       }
     }

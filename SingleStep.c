@@ -22,13 +22,4 @@ void SingleStep(void)
     PrintSummary (stdout);
     AccumProps (0);
   }
-  if (stepCount == stepEquil) PerturbTrajDev ();
-  if (stepCount > stepEquil && (stepCount - stepEquil) % stepTrajDev == 0) {
-    MeasureTrajDev ();
-    if (countTrajDev == limitTrajDev) {
-      PrintTrajDev (stdout);
-      PerturbTrajDev ();
-      BuildNebrList ();
-    }
-  }
 }

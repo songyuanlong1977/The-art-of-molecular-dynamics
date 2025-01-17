@@ -63,15 +63,12 @@ int countTrajDev=0,limitTrajDev=0,stepTrajDev=0;
   NameR (deltaT),
   NameR (density),
   NameI (initUcell),
-  NameI(limitTrajDev),
   NameI (nebrTabFac),
-  NameR (pertTrajDev),
   NameR (rNebrShell),
   NameI (stepAvg),
   NameI (stepEquil),
   NameI (stepInitlzTemp),
   NameI (stepLimit),
-  NameI (stepTrajDev),
   NameR (temperature),
 };
 #endif

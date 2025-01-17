@@ -1,7 +1,7 @@
-date: 2025-2-15
-Function:Trajectory separation  based on pr_03_05
+date: 2025-2-17
+Function:thermodynamics, soft spheres  based on pr_04_01
 Calling list
-pr_03_5 (main)
+pr_04_1 (main)
 	GetNameList(.c)
 	PrintNameList(.c)
 	SetParams(.c)
@@ -21,9 +21,6 @@ pr_03_5 (main)
 		EvalProps(.c)
 		AccumProps(.c)
 		PrintSummary(.c)
-		PerturbTrajDev(.c)
-		MeasureTrajDev(.c)
-		PrintTrajDev(.c)
 Other functions:
 	macros.c (definiations of macros)
 	types.c(definiation of data types)
